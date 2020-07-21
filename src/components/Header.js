@@ -4,11 +4,10 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const StoreHeader = styled.header`
-    font-family: 'Raleway', sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 30px 50px;
+    padding-bottom: 50px;
 
     .logo {
         font-size: 2em;
