@@ -1,7 +1,19 @@
 import React from 'react';
 
 import styled from 'styled-components';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
+
+const Header = (props) => {
+    return(
+        <StoreHeader>
+            <div className='logo'>Fruit Emporium</div>
+            <nav>
+                <Nav exact to ='/' activeClassName='selected'>Home</Nav>
+                <Nav to ='/about' activeClassName='selected'>About</Nav>
+            </nav>
+        </StoreHeader>
+    );
+};
 
 const StoreHeader = styled.header`
     display: flex;
@@ -13,23 +25,18 @@ const StoreHeader = styled.header`
         font-size: 2em;
         font-weight: 900;
     }
-
-    a {
-        text-decoration: none;
-        padding-left: 40px;
-    }
 `;
 
-const Header = (props) => {
-    return(
-        <StoreHeader>
-            <div className='logo'>Fruit Emporium</div>
-            <nav>
-                <Link to ='/'>Home</Link>
-                <Link to ='/about'>About</Link>
-            </nav>
-        </StoreHeader>
-    );
-};
+const Nav = styled(NavLink)`
+    color: #4600E0;
+    font-weight: bold;
+    margin-left: 40px;
+    text-decoration: none;
+    
+    &.selected {
+        color: #c71585;
+        border-bottom: 3px solid;
+    }
+`;
 
 export default Header;
